@@ -16,22 +16,136 @@
 <li>訓練期間：115年06月25日~115年07月29日</li>
 <li>上課時間：平日上午8時至下午5時</li>
 <li>上課地點：國立高雄科技大學建工校區</li>
+
+<li>
+<h4> 115 年 06 月</h4>
+<table>
+  <tr>
+    <th></th>
+    <th>日</th>
+    <th>一</th>
+    <th>二</th>
+    <th>三</th>
+    <th>四</th>
+    <th>五</th>
+    <th>六</th>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w23</td>
+    <td style="text-align: right;"></td>
+    <td style="text-align: right;">1</td>
+    <td style="text-align: right;">2</td>
+    <td style="text-align: right;">3</td>
+    <td style="text-align: right;">4</td>
+    <td style="text-align: right;">5</td>
+    <td style="text-align: right;">6</td>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w24</td>
+    <td style="text-align: right;">7</td>
+    <td style="text-align: right;">8</td>
+    <td style="text-align: right;">9</td>
+    <td style="text-align: right;">10</td>
+    <td style="text-align: right;">11</td>
+    <td style="text-align: right;">12</td>
+    <td style="text-align: right;">13</td>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w25</td>
+    <td style="text-align: right;">14</td>
+    <td style="text-align: right;">15</td>
+    <td style="text-align: right;">16</td>
+    <td style="text-align: right;">17</td>
+    <td style="text-align: right;">18</td>
+    <td style="text-align: right;">19</td>
+    <td style="text-align: right;">20</td>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w26</td>
+    <td style="text-align: right;">21</td>
+    <td style="text-align: right;">22</td>
+    <td style="text-align: right;">23</td>
+    <td style="text-align: right;">24</td>
+    <td style="text-align: right;"><a href="115-06-25/course.md" traget="_blank">25</a></td>
+    <td style="text-align: right;"><a href="115-06-26/course.md" traget="_blank">26</a></td>
+    <td style="text-align: right;">27</td>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w27</td>
+    <td style="text-align: right;">28</td>
+    <td style="text-align: right;"><a href="" target="_blank">29<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">30<a></td>
+    <td style="text-align: right;"></td>
+    <td style="text-align: right;"></td>
+    <td style="text-align: right;"></td>
+    <td style="text-align: right;"></td>
+  </tr>
+</table>
+</li>
+
+<li>
+<h4> 115 年 07 月</h4>
+<table>
+  <tr>
+    <th></th>
+    <th>日</th>
+    <th>一</th>
+    <th>二</th>
+    <th>三</th>
+    <th>四</th>
+    <th>五</th>
+    <th>六</th>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w27</td>
+    <td style="text-align: right;"></td>
+    <td style="text-align: right;"></td>
+    <td style="text-align: right;"></td>
+    <td style="text-align: right;"><a href="" target="_blank">1<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">2<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">3<a></td>
+    <td style="text-align: right;">4</td>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w28</td>
+    <td style="text-align: right;">5</td>
+    <td style="text-align: right;"><a href="" target="_blank">6<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">7<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">8<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">9<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">10<a></td>
+    <td style="text-align: right;">11</td>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w29</td>
+    <td style="text-align: right;">12</td>
+    <td style="text-align: right;"><a href="" target="_blank">13<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">14<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">15<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">16<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">17<a></td>
+    <td style="text-align: right;">18</td>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w30</td>
+    <td style="text-align: right;">19</td>
+    <td style="text-align: right;"><a href="" target="_blank">20<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">21<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">22<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">23<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">24<a></td>
+    <td style="text-align: right;">25</td>
+  </tr>
+  <tr>
+    <td style="text-align: right; font-size: 70%; font-style: italic;">w31</td>
+    <td style="text-align: right;">26</td>
+    <td style="text-align: right;"><a href="" target="_blank">27<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">28<a></td>
+    <td style="text-align: right;"><a href="" target="_blank">29<a></td>
+    <td style="text-align: right;">30</td>
+    <td style="text-align: right;">31</td>
+    <td style="text-align: right;"></td>
+  </tr>
+</table>
+</li>
 </ul>
-
-#### 115 年 06 月
-| Sun | Mon | Tue | Wed | Thu | Fri | Sat |           |  
-| --: | --: | --: | --: | --: | --: | --: | --------: |  
-|     |   1 |   2 |   3 |   4 |   5 |   6 | ***w23*** |  
-|   7 |   8 |   9 |  10 |  11 |  12 |  13 | ***w24*** |  
-|  14 |  15 |  16 |  17 |  18 |  19 |  20 | ***w25*** |  
-|  21 |  22 |  23 |  24 |  [25](115-06-25/course.md) |  [26](115-06-26/course.md) | 27 | ***w26*** |  
-|  28 |  [29]() |  [30]() |     |     |     |     | ***w27*** |  
-
-#### 115 年 07 月
-| Sun | Mon | Tue | Wed | Thu | Fri | Sat |           |  
-| --: | --: | --: | --: | --: | --: | --: | --------: |  
-|     |     |     |   [1]() |   [2]() |   [3]() |   4 | ***w27*** |  
-|   5 |   [6]() |   [7]() |   [8]() |   [9]() |  [10]() |  11 | ***w28*** |  
-|  12 |  [13]() |  [14]() |  [15]() |  [16]() |  [17]() |  18 | ***w29*** |  
-|  19 |  [20]() |  [21]() |  [22]() |  [23]() |  [24]() | 25 | ***w30*** |  
-|  26 |  [27]() |  [28]() |  [29]() |  30 |  31 |     | ***w31*** |  
