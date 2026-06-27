@@ -67,13 +67,13 @@
     <td style="text-align: right;">23</td>
     <td style="text-align: right;">24</td>
     <td style="text-align: right;"><a href="115-06-25/course.md" traget="_blank">25</a></td>
-    <td style="text-align: right;"><a href="115-06-26/course.md" traget="_blank">26</a></td>
+    <td style="text-align: right;">26</td>
     <td style="text-align: right;">27</td>
   </tr>
   <tr>
     <td style="text-align: right; font-size: 70%; font-style: italic;">w27</td>
     <td style="text-align: right;">28</td>
-    <td style="text-align: right;"><a href="" target="_blank">29<a></td>
+    <td style="text-align: right;"><a href="115-06-29/course.md"" target="_blank">29<a></td>
     <td style="text-align: right;"><a href="" target="_blank">30<a></td>
     <td style="text-align: right;"></td>
     <td style="text-align: right;"></td>
