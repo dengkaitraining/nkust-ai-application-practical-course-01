@@ -15,3 +15,8 @@
 ![](images/06-python-資料型態.png)
 ### 7. [python number](https://www.w3schools.com/python/python_numbers.asp)
 ![](images/07-python-number.png)
+## （13:00 ~ 17:00）Python程式設計實務（張剛鳴）
+### 8. [python 類型轉換](https://www.w3schools.com/python/python_casting.asp)
+![](images/08-python-類型轉換.png)
+### 9. [python 字串](https://www.w3schools.com/python/python_strings.asp)
+![](images/09-python-字串-1.png)
