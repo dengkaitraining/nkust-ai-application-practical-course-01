@@ -1,4 +1,4 @@
-## 【人工智慧工具應用實務班第01期】- 115年06月25日
+## 【人工智慧工具應用實務班第01期】- 115年06月29日
 ## （08:00 ~ 12:00）Python程式設計實務（張剛鳴）
 ### 1. [python 入門](https://www.w3schools.com/python/python_getstarted.asp)
 ![](images/01-python-入門.png)
@@ -19,4 +19,13 @@
 ### 8. [python 類型轉換](https://www.w3schools.com/python/python_casting.asp)
 ![](images/08-python-類型轉換.png)
 ### 9. [python 字串](https://www.w3schools.com/python/python_strings.asp)
+#### 9-1. [Python Strings](https://www.w3schools.com/python/python_strings.asp)
 ![](images/09-python-字串-1.png)
+#### 9-2. [Python - Slicing Strings](https://www.w3schools.com/python/python_strings_slicing.asp)
+![](images/09-python-字串-2.png)
+#### 9-3. [Python - Modify Strings](https://www.w3schools.com/python/python_strings_modify.asp)
+![](images/09-python-字串-3.png)
+#### 9-4. [Python - String Concatenation](https://www.w3schools.com/python/python_strings_concatenate.asp)
+![](images/09-python-字串-4.png)
+#### 9-5. [Python - Format - Strings](https://www.w3schools.com/python/python_strings_format.asp)
+![](images/09-python-字串-5.png)
