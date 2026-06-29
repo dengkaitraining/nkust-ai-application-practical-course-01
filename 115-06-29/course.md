@@ -32,6 +32,6 @@
 #### 9-6. [Python - Escape Characters](https://www.w3schools.com/python/python_strings_escape.asp)
 ![](images/09-python-字串-6.png)
 #### 9-7. [Python - String Methods](https://www.w3schools.com/python/python_strings_methods.asp) 
-[Python - String Methods](07-python-string-methods.md)
+[Python - String Methods](09-python-字串/07-python-string-methods.md)
 #### 9-8. [Python - Booleans](https://www.w3schools.com/python/python_booleans.asp)
 ![](images/09-python-字串-7.png)
