@@ -11,5 +11,7 @@
 ### 5. [python 變數](https://www.w3schools.com/python/python_variables.asp)
 ![](images/05-python-變數-1.png)
 ![](images/05-python-變數-2.png)
-
-
+### 6. [python 資料型態](https://www.w3schools.com/python/python_datatypes.asp)
+![](images/06-python-資料型態.png)
+### 7. [python number](https://www.w3schools.com/python/python_numbers.asp)
+![](images/07-python-number.png)
