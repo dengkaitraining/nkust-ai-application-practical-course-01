@@ -1,6 +1,13 @@
 ## 【人工智慧工具應用實務班第01期】- 115年06月30日
 ## （08:00 ~ 12:00）Python程式設計實務（張剛鳴）
 ### 12. [Python 列表](https://www.w3schools.com/python/python_lists.asp)
+![](images/12-python-列表-1.png)
+#### 12-1. [Python - Access List Items](https://www.w3schools.com/python/python_lists_access.asp)
+#### 12-2. [Python - Change List Items](https://www.w3schools.com/python/python_lists_change.asp)
+#### 12-3. [Python - Add List Items](https://www.w3schools.com/python/python_lists_add.asp)
+#### 12-4. [Python - Remove List Items](https://www.w3schools.com/python/python_lists_remove.asp)
+#### 12-5. [Python - Loop Lists](https://www.w3schools.com/python/python_lists_loop.asp)
+#### 12-6. [Python - List Comprehension](https://www.w3schools.com/python/python_lists_comprehension.asp)
 
 ### 1.
 ### 16. [python 如果](https://www.w3schools.com/python/python_conditions.asp)
