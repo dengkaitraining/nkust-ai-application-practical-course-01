@@ -8,8 +8,12 @@
 #### 12-4. [Python - Remove List Items](https://www.w3schools.com/python/python_lists_remove.asp)
 #### 12-5. [Python - Loop Lists](https://www.w3schools.com/python/python_lists_loop.asp)
 #### 12-6. [Python - List Comprehension](https://www.w3schools.com/python/python_lists_comprehension.asp)
+#### 12-7. [Python - Sort Lists](https://www.w3schools.com/python/python_lists_sort.asp)
+#### 12-8. [Python - Copy Lists](https://www.w3schools.com/python/python_lists_copy.asp)
+#### 12-9. [Python - Join Lists](https://www.w3schools.com/python/python_lists_join.asp)
+#### 12-10. [Python - List Methods](https://www.w3schools.com/python/python_lists_methods.asp)
+### 13. [Python - Tuples](https://www.w3schools.com/python/python_tuples.asp)
 
-### 1.
 ### 16. [python 如果](https://www.w3schools.com/python/python_conditions.asp)
 ![](images/16-python-如果-1.png)
 #### 16-1. [Python - Elif Statement](https://www.w3schools.com/python/python_if_elif.asp)

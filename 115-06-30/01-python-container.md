@@ -8,10 +8,10 @@ There are four collection data types in the Python programming language:
 
 
 
-### ```List``` , ```Tuple``` , ```Set``` , ```Distionary```
+### ```[List]``` , ```(Tuple)``` , ```{Set}``` , ```Distionary```
 |   | Ordered () | Changeable () | Allow Duplicates () |
 | :--- | :---: | :---: | :---: |
 | ```[List]``` | ```v``` | ```v``` | ```v``` |
-| ```Tuple``` | ```v``` | ```x``` | ```v``` |
-| ```Set``` | ```x``` | ```x``` | ```x``` |
+| ```(Tuple)``` | ```v``` | ```x``` | ```v``` |
+| ```{Set}``` | ```x``` | ```x``` | ```x``` |
 | ```Distionary``` | ```v``` | ```v``` | ```x``` |
