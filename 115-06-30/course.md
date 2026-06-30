@@ -1,6 +1,7 @@
 ## 【人工智慧工具應用實務班第01期】- 115年06月30日
 ## （08:00 ~ 12:00）Python程式設計實務（張剛鳴）
-### 1.
+### 12. [Python 列表](https://www.w3schools.com/python/python_lists.asp)
+
 ### 1.
 ### 16. [python 如果](https://www.w3schools.com/python/python_conditions.asp)
 ![](images/16-python-如果-1.png)
