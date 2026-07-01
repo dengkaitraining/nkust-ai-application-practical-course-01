@@ -27,6 +27,9 @@ pip install flask
 
 # 安裝 Django 函式庫
 pip install flask
+
+# Install Django
+python -m pip install Django
 ```
 ### 
 ## （13:00 ~ 17:00）Python Flask 框架（徐偉智）
