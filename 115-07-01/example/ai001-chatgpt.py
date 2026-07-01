@@ -34,9 +34,9 @@ for row in data[1:]:
 average = total_spend / count if count > 0 else 0
 
 # 印出結果
-print("Spend平均數:", average)
-print("Spend總數:", total_spend)
-print("總筆數:", count)
+#print("Spend平均數:", average)
+#print("Spend總數:", total_spend)
+#print("總筆數:", count)
 print(f"Spend平均數:{average:.2f}")
 print(f"Spend總數:{total_spend:.2f}")
 print(f"總筆數:{count:.2f}")

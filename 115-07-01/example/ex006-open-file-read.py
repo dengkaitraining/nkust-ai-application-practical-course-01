@@ -8,39 +8,39 @@ reference :
    url : https://www.google.com/search?q=vs+code+FileNotFoundError%3A+%5BErrno+2%5D+No+such+file+or+directory%3A+%27demofile.txt%27&oq=vs+code+FileNotFoundError%3A+%5BErrno+2%5D+No+such+file+or+directory%3A+%27demofile.txt%27&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDU3OTJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
 2. W3Schol - Python File Open
    url : https://www.w3schools.com/python/python_file_handling.asp
+
 """
 from pathlib import Path
 
 # Finds the folder where your script is saved
 script_dir = Path(__file__).parent
+print("---")
+print("parent path = ", script_dir)
 
 # Combines the folder path with your file name
 file_path = script_dir / "demofile.txt"
+print("---")
+print("file path = ", file_path)
+print("---")
 
-# 1. print out file informaition
-print("Ex1. print out file informaition")
-with open(file_path, "rt") as f:
-    for x in f:
-        print(x)
+# open file read
+f = open(file_path, "rt")
 
-# 2. put date into static array
-print("Ex2. put date into static array")
-y = ["", "", "", "", "", ""]
-with open(file_path, "rt") as f:
-    i = 0
-    for x in f:
-        y[i] = x
-        i += 1
-print("list y = ", y)
-print("y[0] = ", y[0])
-print("y[1] = ", y[1])
+# 1. 讀取第一列文字內容
+print("1. 讀取第一列文字內容")
+dog= f.readline()
+print(dog)
+print("---")
 
-# 3. put date into dynamic array
-print("Ex3. put date into dynamic array")
-y = []
-with open(file_path, "rt") as f:
-    for x in f:
-        y.append(x)
-print("list y = ", y)
-print("y[0] = ", y[0])
-print("y[1] = ", y[1])
+# 2. 讀取剩餘文字內容
+print("2. 讀取剩餘文字內容")
+print(f.read())
+print("---")
+
+# 3. 讀取下一列文字內容
+print("3. 讀取下一列文字內容")
+dog= f.readline()
+print(dog)
+
+# close file
+f.close()

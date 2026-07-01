@@ -17,7 +17,7 @@ git config --global user.email "usernameg@gmail.com"
 git config --local user.name "username"
 git config --local user.email "username@gmail.com"
 ```
-#### 3. 安裝 python module
+#### 3-1. 安裝 python module (windows)
 ```sh
 # 安裝 NumPy module
 pip install numpy
@@ -25,11 +25,19 @@ pip install numpy
 # 安裝 Flask 函式庫
 pip install flask
 
-# 安裝 Django 函式庫
-pip install flask
-
-# Install Django
+# Install Django 安裝 Django 函式庫
 python -m pip install Django
+```
+#### 3-2. 安裝 python module (ubuntu)
+```sh
+# 安裝 NumPy module
+sudo pip install numpy --break-system-packages
+
+# 安裝 Flask 函式庫
+sudo pip install flask --break-system-packages
+
+# Install Django 安裝 Django 函式庫
+sudo python3 -m pip install Django --break-system-packages
 ```
 ### 
 ## （13:00 ~ 17:00）Python Flask 框架（徐偉智）

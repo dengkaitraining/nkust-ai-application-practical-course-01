@@ -8,31 +8,39 @@ reference :
    url : https://www.google.com/search?q=vs+code+FileNotFoundError%3A+%5BErrno+2%5D+No+such+file+or+directory%3A+%27demofile.txt%27&oq=vs+code+FileNotFoundError%3A+%5BErrno+2%5D+No+such+file+or+directory%3A+%27demofile.txt%27&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDU3OTJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
 2. W3Schol - Python File Open
    url : https://www.w3schools.com/python/python_file_handling.asp
-
 """
 from pathlib import Path
 
 # Finds the folder where your script is saved
 script_dir = Path(__file__).parent
-print("---")
-print("parent path = ", script_dir)
 
 # Combines the folder path with your file name
 file_path = script_dir / "demofile.txt"
-print("---")
-print("file path = ", file_path)
-print("---")
 
-# open file read
-f = open(file_path, "rt")
+# 1. 使用 for 迴圈列印出檔案內文字內容
+print("1. 使用 for 迴圈列印出檔案內文字內容")
+with open(file_path, "rt") as f:
+    for x in f:
+        print(x)
 
-dog= f.readline()
-print(dog)
-print("---")
-print(f.read())
-print("---")
-dog= f.readline()
-print(dog)
+# 2. 將文字內容儲存於靜態陣列中
+print("2. 將文字內容儲存於靜態陣列中")
+y = ["", "", "", "", ""]
+with open(file_path, "rt") as f:
+    i = 0
+    for x in f:
+        y[i] = x
+        i += 1
+print("list y = ", y)
+print("y[0] = ", y[0])
+print("y[1] = ", y[1])
 
-# close file
-f.close()
+# 3. 將文字內容儲存於動態陣列中
+print("3. 將文字內容儲存於動態陣列中")
+y = []
+with open(file_path, "rt") as f:
+    for x in f:
+        y.append(x)
+print("list y = ", y)
+print("y[0] = ", y[0])
+print("y[1] = ", y[1])

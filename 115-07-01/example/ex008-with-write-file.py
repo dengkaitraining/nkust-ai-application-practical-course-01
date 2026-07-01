@@ -22,7 +22,7 @@ with open(file_path, "w") as f:
   f.write("Second\n")
 
 # open and read the file after the writing:
-print("[Ex1. open and read the file after the writing:]")
+print("[open and read the file after the writing:]")
 with open(file_path) as f:
   print(f.read())
 
@@ -31,6 +31,6 @@ with open(file_path, "a") as f:
   f.write("4\n")
 
 # open and read the file after the appending:
-print("[Ex2. open and read the file after the appending:]")
+print("[open and read the file after the appending:]")
 with open(file_path) as f:
   print(f.read())

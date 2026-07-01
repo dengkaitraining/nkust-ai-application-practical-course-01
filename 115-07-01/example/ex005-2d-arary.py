@@ -1,5 +1,5 @@
 """
-numpy 並未視線建立於 python module 列表，所以必須線安裝該模組。
+numpy 並未預先建立於 python module 列表，所以必須事先安裝該模組。
 指令如下：
 pip install numpy
 """
