@@ -21,9 +21,26 @@ git config --local user.email "username@gmail.com"
 ```sh
 # 安裝 NumPy module
 pip install numpy
+
+# 安裝 Flask 函式庫
+pip install flask
+
+# 安裝 Django 函式庫
+pip install flask
 ```
 ### 
 ## （13:00 ~ 17:00）Python Flask 框架（徐偉智）
-### 
+### Prompt
+#### demofile 計算 Prompt
+```prompt
+有一個純文字檔，demofile.txt 有以下的 csv 格式，第一行紀錄的是欄位名稱，其他行紀錄的是 ID, name, 與 spend。
+{ID,name,spend}, {1,Apartment Rent,1500.00}, {2,Corner Mart Grocers,45.25}
+編寫一個 Python 程式。具有<spec>的功能。
+<spec>
+1. 將 demofile.txt 的每一行讀進一個陣列的一個元素。
+2. 針對陣列，除了第一個元素的其他每一個元素，取出 spend 的值，加總起來，除以總筆數，算出平均數。
+3. 印出 spend 的平均數，總數，以及總筆數。
+</spec>
+```
 ### 
 ### 
