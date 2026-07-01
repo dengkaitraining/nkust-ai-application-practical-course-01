@@ -1,0 +1,6 @@
+ID,name,spend
+1,Apartment Rent,1500.00
+2,Corner Mart Grocers,45.25
+3,Coffee Shop,5.75
+4,Electric Utility Bill,85.40
+5,Streaming Service,14.99
