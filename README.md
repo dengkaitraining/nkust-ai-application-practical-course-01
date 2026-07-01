@@ -102,7 +102,7 @@
     <td style="text-align: right;"></td>
     <td style="text-align: right;"></td>
     <td style="text-align: right;"><a href="115-07-01/course.md" target="_blank">1<a></td>
-    <td style="text-align: right;"><a href="115-07-01/course.md" target="_blank">2<a></td>
+    <td style="text-align: right;"><a href="115-07-02/course.md" target="_blank">2<a></td>
     <td style="text-align: right;">3</td>
     <td style="text-align: right;">4</td>
   </tr>
