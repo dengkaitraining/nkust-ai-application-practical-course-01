@@ -30,4 +30,11 @@ id2(["Server<br>(Python Flask)<br>Back-end (後端)"]) --> |"SQL"| id3[("DB Serv
 1. 不要使用動態網頁。
 </spec>
 ```
-### 
+###
+###
+```sh
+proj001/
+├── app.py
+└── static/         # <-- 必須是這個名字
+    └── index.html  # <-- 你的首頁檔案
+``` 
