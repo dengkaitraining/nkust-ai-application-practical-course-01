@@ -13,6 +13,10 @@ def home():
 def my_page():
     return redirect(url_for('static', filename='my_page.html'))
 
+@app.route('/about')
+def about():
+    return redirect(url_for('static', filename='about.html'))
+
 # 啟動伺服器
 if __name__ == "__main__":
     app.run(debug=True)

@@ -13,5 +13,9 @@ def home():
 def my_page():
     return send_from_directory(app.static_folder, 'my_page.html')
 
+@app.route('/about')
+def about():
+    return send_from_directory(app.static_folder, 'about.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
