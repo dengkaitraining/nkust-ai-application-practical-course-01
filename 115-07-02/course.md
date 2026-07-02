@@ -65,3 +65,35 @@ if __name__ == "__main__":
 ```
 
 ### Browser 可以解讀 HTML 語法，然後呈現內容。
+
+### HTML 語法
+1. 是一種 tag 語法，tag 是成對的 ```<tag_name> ... </tag_name>```
+2. 每一個 tag 對瀏覽器都有不同的意義，也就是瀏覽器看到一個 tag 就會有不同的作用或呈現的結果，舉例來說：
+```html
+-- 會有超連結的作用
+<a href-"https:/wwww.nkust.edu.tw/">高科大</a>
+```
+3. 每一個 tag 都有參數 (argment) 可以設定，例如 ```<a href="...">```；```<img src="test.jpg">```
+4. 如果 tag 沒有包含其他內容，則可以省略結束 tag ，例如： ```<img src="test.jpg"></img>``` 可以省略為 ```<img src="test.jpg /">```，更精簡的寫法 ```<img src="test.jpg">``` 。
+5. tag 是巢狀包含的，例如：```<body><a><img></a></body>```。
+6. HTML 要求沒有那麼嚴謹，只要有 tag 就 OK ，但正規的 HTML Document 應該要有如下的 tag
+```html
+<html>
+    <head></head>
+    <body>
+        <!-- 在 body tag 內的 tags，就是會成現在 Browser 的窗格上的 --->
+    </body>
+</html>
+```
+ - 練習 index.html
+ ```html
+ <html>
+    <head>
+        <title>我的第一個 HTML</title>
+    </head>
+    <body>
+        <img src="images/1-web-app-1.png">
+        <a href="https://www.nkust.edu.tw/" target="_blank">高顆大</a>
+    </body>
+</html>
+ ```
