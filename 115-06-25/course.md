@@ -75,4 +75,4 @@ print(city[0]) #Taipei
 <br>
 
 ## （13:00 ~ 17:00）工作自動化流程（趙伯元）
- - [課程講義 - n8n實戰1-從思維轉型到實作分析的全維度指南](docs/n8n實戰1-從思維轉型到實作分析的全維度指南.pdf)
+ - [課程講義 - n8n實戰1-從思維轉型到實作分析的全維度指南](https://drive.google.com/file/d/1-OE0JNbhxxClSZZoZWPyfteQQdouSYht/view?usp=drive_link)

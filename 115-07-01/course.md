@@ -56,5 +56,5 @@ sudo python3 -m pip install Django --break-system-packages
 ### 
 ### 
 ## 學員提供筆記內容與程式範例
- - [徐偉智教授授課筆記](docs/7_1課堂內容.pdf) (學員)
- - [程式範例](docs/yang.rar)
+ - [徐偉智教授授課筆記](https://drive.google.com/file/d/1dM0MRw5D6j2LM0-0J4KTjhlVFz_r1pa_/view?usp=drive_link) (學員「吳依珊」提供)
+ - [程式範例](https://drive.google.com/file/d/18JZBDXDkI-kNMSQt2kpcJY1uKlwx_DQQ/view?usp=drive_link) (學員「小陽」提供)
