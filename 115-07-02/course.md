@@ -6,6 +6,23 @@
 ### 
 ### 
 ## （13:00 ~ 17:00）檢索增強生成應用系統開發（徐偉智）
-### 
-### 
+### Web Application（網站應用程式）
+ - ASP.NET + MSSQL Server + IIS
+ - PHP + MySQL + Apache Server
+ - Java Servlet + JSP + PostgreSQL + Tomcat Server
+ - <span style="color:red">Python + MySQL + Flask</span>
+```mermaid
+flowchart RL
+id1(["Browser<br>(HTML, CSS, javascript)<br>Front-end (前端)"]) --> |"Requset Message<br>(URL ...)"| id2(["Server<br>(Python Flask)<br>Back-end (後端)"])
+id2(["Server<br>(Python Flask)<br>Back-end (後端)"]) --> |"Response Message<br>(HTML Document)"| id1(["Browser<br>(HTML, CSS, javascript)<br>Front-end (前端)"])
+
+id3[("DB Server<br>")] --> |"Data"| id2(["Server<br>(Python Flask)<br>Back-end (後端)"])
+id2(["Server<br>(Python Flask)<br>Back-end (後端)"]) --> |"SQL"| id3[("DB Server<br>")]
+```
+![](images/1-web-app-1.png)
+ - 每一次 Browseer 從 Web Server 下載 resource （.html、.css、.js、 ...）都是一次的 Request 與 Response<br><br>
+### Prompt
+```prompt
+編寫一個 Python Flask Web Application 的最簡單範例。
+```
 ### 
