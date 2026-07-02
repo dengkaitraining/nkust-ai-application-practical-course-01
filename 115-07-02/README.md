@@ -103,4 +103,13 @@ if __name__ == "__main__":
 ```prompt
 不用 CSS，只用HTML，如何設定字的顏色與大小。
 ```
-### HTML 主要是用來表現資訊
+### HTML 主要是用來表現資訊內與結構，CSS 則用來作樣式修飾。
+### Prompt
+```prompt
+編寫一個 Python Flask Web Application ，具有<spec>的規格。
+<spec>
+1. 我已編寫好 index.html 。使用 route / 可以連到 index.html。
+2. index.html 有使用到 test.jpg
+3. 使用靜態網頁呈現，不要使用動態網頁。
+</spec>
+```
