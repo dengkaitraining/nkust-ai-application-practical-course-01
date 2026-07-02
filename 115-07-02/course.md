@@ -21,8 +21,13 @@ id2(["Server<br>(Python Flask)<br>Back-end (後端)"]) --> |"SQL"| id3[("DB Serv
 ```
 ![](images/1-web-app-1.png)
  - 每一次 Browseer 從 Web Server 下載 resource （.html、.css、.js、 ...）都是一次的 Request 與 Response<br><br>
+### 系統環境變數 PATH 加入
+ - <span style="color:red">C:\Users\user\AppData\Local\Programs\Python\Python313</span>， - <span style="color:red">C:\Users\user\AppData\Local\Programs\Python\Python313\Scripts</span>
 ### Prompt
 ```prompt
-編寫一個 Python Flask Web Application 的最簡單範例。
+編寫一個 Python Flask Web Application 的最簡單學習範例，規格如<spec>所述。
+<spec>
+1. 不要使用動態網頁。
+</spec>
 ```
 ### 
