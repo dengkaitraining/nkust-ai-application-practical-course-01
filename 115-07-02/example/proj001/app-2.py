@@ -8,6 +8,11 @@ app = Flask(__name__)
 def home():
     # Flask 內建 static 路由，只要指定 filename 參數即可
     return redirect(url_for('static', filename='index.html'))
+
+@app.route('/my_page')
+def my_page():
+    return redirect(url_for('static', filename='my_page.html'))
+
 # 啟動伺服器
 if __name__ == "__main__":
     app.run(debug=True)

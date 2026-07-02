@@ -9,5 +9,9 @@ def home():
     # static_folder 預設就是 'static'，直接指定檔案名稱即可
     return send_from_directory(app.static_folder, 'index.html')
 
+@app.route('/my_page')
+def my_page():
+    return send_from_directory(app.static_folder, 'my_page.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
