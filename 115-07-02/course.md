@@ -30,11 +30,38 @@ id2(["Server<br>(Python Flask)<br>Back-end (後端)"]) --> |"SQL"| id3[("DB Serv
 1. 不要使用動態網頁。
 </spec>
 ```
-###
-###
+### Python Flask 線上學習教材
+ - [https://ithelp.ithome.com.tw/users/20120116/ironman/2532](https://ithelp.ithome.com.tw/users/20120116/ironman/2532)
+### 執行中的 Server 是不關機的
+### Coding 工作很煩人
+ - 
+### Python Flask 是一 Web Application 開發框架（Framework）
+ - Web Application 的執行環境都建好了。
+ - 我們只要按照他的框架與規範，就可以開發 Web Application
+ - 框架有很多種，即時 Python 
+###  
 ```sh
 proj001/
 ├── app.py
 └── static/         # <-- 必須是這個名字
     └── index.html  # <-- 你的首頁檔案
 ``` 
+#### 解釋 app.py
+```python
+from flask import Flask # 從 flask 集合體中載入 Flask 模組
+
+# 建立 Flask 應用程式
+app = Flask(__name__)
+
+# 首頁：http://127.0.0.1:5000/ 瀏覽器輸入該網址，會觸發 (invoke) home() 函式的執行
+@app.route('/')
+def home():
+    # static_folder 預設就是 'static'，直接指定檔案名稱即可
+    return app.send_static_file('index.html') # 呼叫 app.send_static_file 函式將靜態 index.html 的內容傳送到 Browser
+
+# 啟動 Flask
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+### Browser 可以解讀 HTML 語法，然後呈現內容。
