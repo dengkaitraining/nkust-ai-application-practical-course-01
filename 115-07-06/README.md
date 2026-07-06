@@ -23,13 +23,13 @@ flowchart LR
 
 
 ```
-#### 1. 定義規範(Rules)：<span style="color:#ff0000">AGENTS.md<span>
+#### 1. 定義規範(Rules)：<font color="red">AGENTS.md</font>
 #### 2. 需求對齊(Alignment)：互動問答收斂需求
-#### 3. 計畫制定(Plan)：<span style="color:#ff0000">implementation_plan.md<span>
-#### 4. 進度追蹤(Task)：<span style="color:#ff0000">task.md<span>
+#### 3. 計畫制定(Plan)：<font color="red">implementation_plan.md</font>
+#### 4. 進度追蹤(Task)：<font color="red">task.md</font>
 #### 5. 平行執行(Execution)：背景任務 & Subagents
-#### 6. 驗證交付(Verificationl)：<span style="color:#ff0000">walkthrough.md<span>
-#### 7. 沉澱淨化(Evalution)：Custom Skill & <span style="color:#ff0000">/learn<span>
+#### 6. 驗證交付(Verificationl)：<font color="red">walkthrough.md</font>
+#### 7. 沉澱淨化(Evalution)：Custom Skill & <font color="red">/learn</font>
 ### 
 ## （13:00 ~ 17:00）AI 代理人概論（曾士桓）
 ### 
