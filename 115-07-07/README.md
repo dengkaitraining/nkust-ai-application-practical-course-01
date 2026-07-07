@@ -38,3 +38,12 @@ mypro i
  ```
  - 1. app 物件有一個函式 send_static_file()
  - 2. 物件.函式
+### 動熊網頁範例
+```python
+@app.route("/dynamic")
+def dynamic():
+    # 隨機生成一個 0 到 50 的數字，儲存到 dog 的變數中
+    dog = random.randint(0, 50)
+    print(dog)
+    return render_template("locky.html", num = dog) # 將 dog 變數傳給 locky.html
+```
