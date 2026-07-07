@@ -11,14 +11,30 @@
  - PHP + MySQL + Apache Server
  - Java Servlet + JSP + PostgreSQL + Tomcat Server
  - <span style="color:red">Python + MySQL + Flask</span>
+
 ```mermaid
 flowchart RL
-id1(["Browser<br>(HTML, CSS, javascript)<br>Front-end (前端)"]) --> |"Requset Message<br>(URL ...)"| id2(["Server<br>(Python Flask)<br>Back-end (後端)"])
-id2(["Server<br>(Python Flask)<br>Back-end (後端)"]) --> |"Response Message<br>(HTML Document)"| id1(["Browser<br>(HTML, CSS, javascript)<br>Front-end (前端)"])
+   subgraph bw["<font color='red'></font>"]
+       id1(["<br/><font color='red'>&nbsp;&nbsp;&nbsp;&nbsp;Browser&nbsp;&nbsp;&nbsp;&nbsp;</font><br/><br/>"])
+       id2["<font color='red'>(HTML, CSS, javascript)<br>Front-end (前端)</font>"]
+   end
+   
+   subgraph py["<font color='red'></font>"]
+       id3(["<br/><font color='green'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br/><br/>"])
+       id4["<font color='green'>(Python Flask)<br>Back-end (後端)</font>"]
+   end
 
-id3[("DB Server<br>")] --> |"Data"| id2(["Server<br>(Python Flask)<br>Back-end (後端)"])
-id2(["Server<br>(Python Flask)<br>Back-end (後端)"]) --> |"SQL"| id3[("DB Server<br>")]
+   subgraph db["<font color='blue'></font>"]
+       id5(["<br/><font color='blue'>&nbsp;&nbsp;&nbsp;DB Server&nbsp;&nbsp;&nbsp;</font><br/><br/>"])
+   end
+
+   id1 --> |"<font color='purple'>Requset Message<br>(URL ...)</font>"| id3
+   id3 --> |"<font color='blue'>Response Message<br>(HTML Document)</font>"| id1
+   id3 --> |"<font color='purple'>SQL</font>"| id5
+   id5 --> |"<font color='blue'>Data</font"| id3
 ```
+
+
 ![](images/1-web-app-1.png)
  - 每一次 Browseer 從 Web Server 下載 resource （.html、.css、.js、 ...）都是一次的 Request 與 Response<br><br>
 ### 系統環境變數 PATH 加入
