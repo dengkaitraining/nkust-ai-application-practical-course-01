@@ -1,0 +1,192 @@
+{
+  "name": "第二個n8n專案-cloud",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "6260a4f7-8fea-4270-9d11-414f35d00875",
+              "leftValue": "={{ $json['程式設計成績'] }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -432,
+        128
+      ],
+      "id": "9aad5364-a2cd-43a9-9459-5bb37d45d411",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "學生成績單",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto;\">\n  <table style=\"width: 100%; border-collapse: collapse; text-align: left; box-shadow: 0 2px 3px rgba(0,0,0,0.1);\">\n    <thead>\n      <tr style=\"background-color: #4CAF50; color: white;\">\n        <th colspan=\"2\" style=\"padding: 12px; text-align: center; font-size: 18px;\">114學年度期末考程式設計成績及格</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: #f9f9f9;\">\n        <td style=\"padding: 12px; border: 1px solid #ddd; font-weight: bold; width: 30%;\">學生姓名</td>\n        <td style=\"padding: 12px; border: 1px solid #ddd;\">{{ $json['姓名'] }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 12px; border: 1px solid #ddd; font-weight: bold;\">程式設計成績</td>\n        <td style=\"padding: 12px; border: 1px solid #ddd;\">{{ $json['程式設計成績'] }} 分</td>\n      </tr>\n    </tbody>\n  </table>\n</div>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -144,
+        -48
+      ],
+      "id": "23f6b93e-bc78-465e-a2ee-1e56937870da",
+      "name": "寄及格成績",
+      "webhookId": "c47f01cd-dc04-46e7-9885-931215f035d0",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WdxuHb9gOoPIP1Iw",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "學生成績單",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto;\">\n  <table style=\"width: 100%; border-collapse: collapse; text-align: left; box-shadow: 0 2px 3px rgba(0,0,0,0.1);\">\n    <thead>\n      <tr style=\"background-color: #4CAF50; color: white;\">\n        <th colspan=\"2\" style=\"padding: 12px; text-align: center; font-size: 18px;\">114學年度期末考程式設計成績不及格</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr style=\"background-color: #f9f9f9;\">\n        <td style=\"padding: 12px; border: 1px solid #ddd; font-weight: bold; width: 30%;\">學生姓名</td>\n        <td style=\"padding: 12px; border: 1px solid #ddd;\">{{ $json['姓名'] }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 12px; border: 1px solid #ddd; font-weight: bold;\">程式設計成績</td>\n        <td style=\"padding: 12px; border: 1px solid #ddd;\">{{ $json['程式設計成績'] }} 分</td>\n      </tr>\n    </tbody>\n  </table>\n</div>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -144,
+        240
+      ],
+      "id": "cd94d189-6f40-4c08-b6b5-caadeba576e4",
+      "name": "寄不及格成績",
+      "webhookId": "c47f01cd-dc04-46e7-9885-931215f035d0",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WdxuHb9gOoPIP1Iw",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -944,
+        128
+      ],
+      "id": "a7b361fe-e92b-4afb-9713-5969cb354125",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I",
+          "mode": "list",
+          "cachedResultName": "114期末成績",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "工作表1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -688,
+        128
+      ],
+      "id": "b71e19e6-fb61-4122-979e-6715c869d580",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "jqfj7BGItKeMjPes",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "寄及格成績",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "寄不及格成績",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "5f128769-f617-426e-b7f7-16b9e1306612",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "63d59a284554d5077476f6b4b0a5fac8a9a2601af3e3a6e85e6dc307002abe71"
+  },
+  "nodeGroups": [],
+  "id": "yOfUIFEHtXJQAdOa",
+  "tags": [
+    {
+      "updatedAt": "2026-07-07T00:34:21.315Z",
+      "createdAt": "2026-07-07T00:34:21.315Z",
+      "id": "bTNBMEY472eqjjc8",
+      "name": "training"
+    }
+  ]
+}

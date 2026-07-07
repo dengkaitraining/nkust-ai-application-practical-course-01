@@ -1,0 +1,187 @@
+{
+  "name": "寄送學生成績>60",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "b618158c-fec9-447f-bb4a-7d1047139d34",
+              "leftValue": "={{ $json[\"程式設計成績\"] }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        576,
+        -64
+      ],
+      "id": "f531687c-f74a-4d3b-90df-1ca247ef1c03",
+      "name": "判斷成績>60"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "[提醒]114學年度期未考成績-及格",
+        "emailType": "text",
+        "message": "=114學年度 {{ $json[\"姓名\"] }}同學\n程式設計期未考成績：{{ $json[\"程式設計成績\"] }}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        832,
+        -192
+      ],
+      "id": "cb397ca5-0afe-41fc-bd51-036a1d187c5e",
+      "name": "寄及格成績",
+      "webhookId": "c62b68d7-d4bd-4edc-9757-11affa291aa5",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YElI3G0QT5QcKN8i",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "[提醒]114學年度期未考成績-不及格",
+        "emailType": "text",
+        "message": "=114學年度 {{ $json[\"姓名\"] }}同學\n程式設計期未考成績：{{ $json[\"程式設計成績\"] }}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        832,
+        16
+      ],
+      "id": "ae57b522-9209-44e7-8f5d-83577d9a6737",
+      "name": "寄不及格成績",
+      "webhookId": "c62b68d7-d4bd-4edc-9757-11affa291aa5",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YElI3G0QT5QcKN8i",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        160,
+        -64
+      ],
+      "id": "21595c80-54a8-43c8-a3a9-0e1ea78e632d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1rh0QB6_d_7dudH0Gp2J6q36mWBdjgQy4o6Fkf647Avw",
+          "mode": "list",
+          "cachedResultName": "114期末成績",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rh0QB6_d_7dudH0Gp2J6q36mWBdjgQy4o6Fkf647Avw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "工作表1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rh0QB6_d_7dudH0Gp2J6q36mWBdjgQy4o6Fkf647Avw/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        368,
+        -64
+      ],
+      "id": "cd8a93b0-2390-4228-a433-9785da997c5d",
+      "name": "讀取學生成績",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Fr8A4OXzkwTwcBGl",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "判斷成績>60": {
+      "main": [
+        [
+          {
+            "node": "寄及格成績",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "寄不及格成績",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "讀取學生成績",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "讀取學生成績": {
+      "main": [
+        [
+          {
+            "node": "判斷成績>60",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "2a0780fa-3e19-4728-bf96-d96a6a977a66",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b2a0a37e84c32cccad0047596a38b2a5dc71a729ede748e00b24a62a28532677"
+  },
+  "nodeGroups": [],
+  "id": "71AfNtpAlY59uBpY",
+  "tags": []
+}

@@ -1,0 +1,39 @@
+{
+  "name": "第一個n8n專案",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "82fd9f54-59b3-4e28-9ebd-f635494cc66b",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "pinData": {},
+  "connections": {},
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "586314f0-0522-43d8-a675-d01e4d96d129",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "cf0022e308415c068550192767580aaa66ae7fe81c2cb346badefa0255180059"
+  },
+  "nodeGroups": [],
+  "id": "kUklZUtfow1Oq37n",
+  "tags": [
+    {
+      "name": "ch1",
+      "id": "1EnhWJX8W2H80sg8",
+      "updatedAt": "2026-07-07T00:32:58.580Z",
+      "createdAt": "2026-07-07T00:32:58.580Z"
+    }
+  ]
+}

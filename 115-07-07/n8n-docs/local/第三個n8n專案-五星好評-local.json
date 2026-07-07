@@ -1,0 +1,185 @@
+{
+  "name": "第三個n8n專案-五星好評-local",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "59f0a5ec-4f8c-45d7-8add-0c8df71ffcfc",
+      "name": "When clicking ‘Execute workflow’ [3]"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JtwdrMdJZFgaiWtEPb_Exvlx3NEWvPt9ut-P6UKor_M",
+          "mode": "list",
+          "cachedResultName": "滿意度調查",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JtwdrMdJZFgaiWtEPb_Exvlx3NEWvPt9ut-P6UKor_M/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "工作表1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JtwdrMdJZFgaiWtEPb_Exvlx3NEWvPt9ut-P6UKor_M/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "a94d6a0c-af89-4028-9bc1-329094ab8d41",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ks4Ycph9939cGYGE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "56f661c5-fd64-4898-8420-3072f4e12706",
+              "leftValue": "={{ $json['5星評分'] }}",
+              "rightValue": 5,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        416,
+        0
+      ],
+      "id": "72383f99-c92a-4649-96ca-5ed74b8910b9",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "恭喜獲得五星好評獎品 Switch 2 一台",
+        "message": "=<!DOCTYPE html>\n<html lang=\"zh-TW\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>恭喜獲得五星好評獎品！</title>\n    <style>\n        *, *::before, *::after {\n            box-sizing: border-box;\n        }\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Microsoft JhengHei\", sans-serif;\n            background-color: #f4f7f6;\n            color: #333333;\n            margin: 0;\n            padding: 0;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            min-height: 100vh;\n        }\n        .container {\n            background-color: #ffffff;\n            border-radius: 16px;\n            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);\n            max-width: 600px;\n            width: 90%;\n            padding: 40px;\n            margin: 20px auto;\n            text-align: center;\n            border-top: 8px solid #e60012; /* Nintendo Switch 主題紅 */\n        }\n        .congrats-title {\n            color: #e60012;\n            font-size: 28px;\n            font-weight: bold;\n            margin-bottom: 10px;\n        }\n        .prize-banner {\n            background-color: #fff0f1;\n            border: 1px dashed #e60012;\n            border-radius: 8px;\n            padding: 20px;\n            margin: 25px 0;\n        }\n        .prize-name {\n            font-size: 24px;\n            color: #e60012;\n            font-weight: bold;\n            display: block;\n            margin-top: 5px;\n        }\n        .info-section {\n            text-align: left;\n            background-color: #f8f9fa;\n            border-radius: 8px;\n            padding: 25px;\n            margin-bottom: 25px;\n        }\n        .info-title {\n            font-size: 18px;\n            font-weight: bold;\n            color: #2c3e50;\n            margin-top: 0;\n            margin-bottom: 15px;\n            border-left: 4px solid #e60012;\n            padding-left: 10px;\n        }\n        .info-item {\n            margin-bottom: 12px;\n            font-size: 16px;\n            line-height: 1.6;\n        }\n        .info-label {\n            font-weight: bold;\n            color: #666666;\n            display: inline-block;\n            width: 90px;\n        }\n        .comment-box {\n            background-color: #ffffff;\n            border: 1px solid #e2e8f0;\n            border-radius: 6px;\n            padding: 12px 15px;\n            margin-top: 8px;\n            font-style: italic;\n            color: #4a5568;\n            position: relative;\n        }\n        .notice-section {\n            text-align: left;\n            font-size: 14px;\n            color: #666666;\n            line-height: 1.6;\n            border-top: 1px solid #eaeaea;\n            padding-top: 20px;\n        }\n        .notice-title {\n            font-weight: bold;\n            color: #333333;\n            margin-bottom: 8px;\n        }\n        .notice-list {\n            padding-left: 20px;\n            margin: 0;\n        }\n        .notice-list li {\n            margin-bottom: 5px;\n        }\n        .footer {\n            margin-top: 30px;\n            font-size: 13px;\n            color: #999999;\n        }\n    </style>\n</head>\n<body>\n\n<div class=\"container\">\n    <div class=\"congrats-title\">🎉 恭喜您得獎了！ 🎉</div>\n    <p style=\"font-size: 16px; color: #555555; line-height: 1.5;\">\n        親愛的會員您好，感謝您的熱烈支持與好評分享！<br>恭喜您獲得本次五星好評抽獎活動的特獎：\n    </p>\n\n    <div class=\"prize-banner\">\n        <span style=\"font-size: 16px; color: #555555;\">活動大獎</span>\n        <span class=\"prize-name\">Nintendo Switch 2 一台</span>\n    </div>\n\n    <div class=\"info-section\">\n        <div class=\"info-title\">您的評價與中獎資訊</div>\n        <div class=\"info-item\">\n            <span class=\"info-label\">真實姓名：</span>\n            <span>{{ $json['姓名'] }}</span>\n        </div>\n        <div class=\"info-item\">\n            <span class=\"info-label\">評分星級：</span>\n            <span style=\"color: #ffb100; font-weight: bold;\">{{ $json['5星評分'] }}</span>\n        </div>\n        <div class=\"info-item\" style=\"margin-bottom: 0;\">\n            <span class=\"info-label\">心得評語：</span>\n            <div class=\"comment-box\">\n                「 {{ $json['評語'] }} 」\n            </div>\n        </div>\n    </div>\n\n    <div class=\"notice-section\">\n        <div class=\"notice-title\">🎁 領獎須知：</div>\n        <ul class=\"notice-list\">\n            <li>系統已發送中獎確認信至您的會員信箱，請於 <strong>7 個工作天內</strong> 回填收件資料。</li>\n            <li>獎品將於收件資料確認無誤後，依序安排寄出（寄送範圍僅限台澎金馬地區）。</li>\n            <li>若有任何領獎問題，歡迎隨時聯繫線上客服。</li>\n        </ul>\n    </div>\n\n    <div class=\"footer\">\n        祝您遊戲愉快！再次感謝您的優質好評。\n    </div>\n</div>\n\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        -96
+      ],
+      "id": "9d61e89f-d698-4825-9427-0fa782eef360",
+      "name": "恭喜獲得五星好評獎品",
+      "webhookId": "35d40e56-0443-4118-88e4-84fdd3e30f31",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "OH1lVO2qaSlZtfGP",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "未獲得五星好評獎品",
+        "message": "=<!DOCTYPE html>\n<html lang=\"zh-TW\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>恭喜獲得五星好評獎品！</title>\n    <style>\n        *, *::before, *::after {\n            box-sizing: border-box;\n        }\n        body {\n            font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Microsoft JhengHei\", sans-serif;\n            background-color: #f4f7f6;\n            color: #333333;\n            margin: 0;\n            padding: 0;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            min-height: 100vh;\n        }\n        .container {\n            background-color: #ffffff;\n            border-radius: 16px;\n            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);\n            max-width: 600px;\n            width: 90%;\n            padding: 40px;\n            margin: 20px auto;\n            text-align: center;\n            border-top: 8px solid #e60012; /* Nintendo Switch 主題紅 */\n        }\n        .congrats-title {\n            color: #e60012;\n            font-size: 28px;\n            font-weight: bold;\n            margin-bottom: 10px;\n        }\n        .prize-banner {\n            background-color: #fff0f1;\n            border: 1px dashed #e60012;\n            border-radius: 8px;\n            padding: 20px;\n            margin: 25px 0;\n        }\n        .prize-name {\n            font-size: 24px;\n            color: #e60012;\n            font-weight: bold;\n            display: block;\n            margin-top: 5px;\n        }\n        .info-section {\n            text-align: left;\n            background-color: #f8f9fa;\n            border-radius: 8px;\n            padding: 25px;\n            margin-bottom: 25px;\n        }\n        .info-title {\n            font-size: 18px;\n            font-weight: bold;\n            color: #2c3e50;\n            margin-top: 0;\n            margin-bottom: 15px;\n            border-left: 4px solid #e60012;\n            padding-left: 10px;\n        }\n        .info-item {\n            margin-bottom: 12px;\n            font-size: 16px;\n            line-height: 1.6;\n        }\n        .info-label {\n            font-weight: bold;\n            color: #666666;\n            display: inline-block;\n            width: 90px;\n        }\n        .comment-box {\n            background-color: #ffffff;\n            border: 1px solid #e2e8f0;\n            border-radius: 6px;\n            padding: 12px 15px;\n            margin-top: 8px;\n            font-style: italic;\n            color: #4a5568;\n            position: relative;\n        }\n        .notice-section {\n            text-align: left;\n            font-size: 14px;\n            color: #666666;\n            line-height: 1.6;\n            border-top: 1px solid #eaeaea;\n            padding-top: 20px;\n        }\n        .notice-title {\n            font-weight: bold;\n            color: #333333;\n            margin-bottom: 8px;\n        }\n        .notice-list {\n            padding-left: 20px;\n            margin: 0;\n        }\n        .notice-list li {\n            margin-bottom: 5px;\n        }\n        .footer {\n            margin-top: 30px;\n            font-size: 13px;\n            color: #999999;\n        }\n    </style>\n</head>\n<body>\n\n<div class=\"container\">\n    <div class=\"congrats-title\">🎉  🎉</div>\n    <p style=\"font-size: 16px; color: #555555; line-height: 1.5;\">\n        親愛的會員您好，感謝您的熱烈支持與好評分享！\n    </p>\n\n    <div class=\"prize-banner\">\n        <span style=\"font-size: 16px; color: #555555;\">活動大獎</span>\n        <span class=\"prize-name\">Nintendo Switch 2 一台</span>\n    </div>\n\n    <div class=\"info-section\">\n        <div class=\"info-title\">您的評價與中獎資訊</div>\n        <div class=\"info-item\">\n            <span class=\"info-label\">真實姓名：</span>\n            <span>{{ $json['姓名'] }}</span>\n        </div>\n        <div class=\"info-item\">\n            <span class=\"info-label\">評分星級：</span>\n            <span style=\"color: #ffb100; font-weight: bold;\">{{ $json['5星評分'] }}</span>\n        </div>\n        <div class=\"info-item\" style=\"margin-bottom: 0;\">\n            <span class=\"info-label\">心得評語：</span>\n            <div class=\"comment-box\">\n                「 {{ $json['評語'] }} 」\n            </div>\n        </div>\n    </div>\n\n    <div class=\"footer\">\n        祝您遊戲愉快！再次感謝您的優質好評。\n    </div>\n</div>\n\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        624,
+        64
+      ],
+      "id": "ae591cf5-c653-4825-96d0-c7aef88d07d6",
+      "name": "未獲得五星好評獎品",
+      "webhookId": "35d40e56-0443-4118-88e4-84fdd3e30f31",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "OH1lVO2qaSlZtfGP",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’ [3]": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "恭喜獲得五星好評獎品",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "未獲得五星好評獎品",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "0ed22019-f406-4a69-a412-11e274d50145",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8221441b5fb0e121daeab9f4c2fc51c438ddf6ab38212fa85927b6de43fb63a3"
+  },
+  "nodeGroups": [],
+  "id": "i24N7I3zV0y5ytSG",
+  "tags": []
+}

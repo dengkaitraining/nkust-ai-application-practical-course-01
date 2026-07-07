@@ -1,0 +1,169 @@
+{
+  "name": "第一個n8n專案-local",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "7692043d-5e99-48eb-8a13-d4f4e7a04a62",
+              "leftValue": "={{ $json['國文'] }}",
+              "rightValue": 60,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "ac5deb06-d0a6-45c0-9e36-d2c423d34e10",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.mail }}",
+        "subject": "寄及格成績",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto;\">   <table style=\"width: 100%; border-collapse: collapse; text-align: left; box-shadow: 0 2px 3px rgba(0,0,0,0.1);\">     <thead>       <tr style=\"background-color: #4CAF50; color: white;\">         <th colspan=\"2\" style=\"padding: 12px; text-align: center; font-size: 18px;\">114學年度期末考國文成績及格</th>       </tr>     </thead>     <tbody>       <tr style=\"background-color: #f9f9f9;\">         <td style=\"padding: 12px; border: 1px solid #ddd; font-weight: bold; width: 30%;\">學生姓名</td>         <td style=\"padding: 12px; border: 1px solid #ddd;\">{{ $json['姓名'] }}</td>       </tr>       <tr>         <td style=\"padding: 12px; border: 1px solid #ddd; font-weight: bold;\">國文成績</td>         <td style=\"padding: 12px; border: 1px solid #ddd;\">{{ $json['國文'] }} 分</td>       </tr>     </tbody>   </table> </div>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        -128
+      ],
+      "id": "fc01f08a-f056-4e58-81e2-1b9563ab0ee5",
+      "name": "寄及格成績",
+      "webhookId": "9a57b679-a588-49d8-bec2-78bca0c8804a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "OH1lVO2qaSlZtfGP",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.mail }}",
+        "subject": "寄不及格成績",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto;\">   <table style=\"width: 100%; border-collapse: collapse; text-align: left; box-shadow: 0 2px 3px rgba(0,0,0,0.1);\">     <thead>       <tr style=\"background-color: #4CAF50; color: white;\">         <th colspan=\"2\" style=\"padding: 12px; text-align: center; font-size: 18px;\">114學年度期末考國文成績不及格</th>       </tr>     </thead>     <tbody>       <tr style=\"background-color: #f9f9f9;\">         <td style=\"padding: 12px; border: 1px solid #ddd; font-weight: bold; width: 30%;\">學生姓名</td>         <td style=\"padding: 12px; border: 1px solid #ddd;\">{{ $json['姓名'] }}</td>       </tr>       <tr>         <td style=\"padding: 12px; border: 1px solid #ddd; font-weight: bold;\">國文成績</td>         <td style=\"padding: 12px; border: 1px solid #ddd;\">{{ $json['國文'] }} 分</td>       </tr>     </tbody>   </table> </div>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        80
+      ],
+      "id": "7aa7be60-d73d-4d64-bc3c-6a2b07d09374",
+      "name": "寄不及格成績",
+      "webhookId": "9a57b679-a588-49d8-bec2-78bca0c8804a",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "OH1lVO2qaSlZtfGP",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c589473b-5b61-41c1-9d4a-c23025b00dd8",
+      "name": "When clicking ‘Execute workflow’ [1]"
+    }
+  ],
+  "pinData": {
+    "When clicking ‘Execute workflow’ [1]": [
+      {
+        "json": {
+          "學號": "09111",
+          "姓名": "王小明",
+          "mail": "dengkai.counter@gmail.com",
+          "國文": 70,
+          "英文": 88
+        }
+      },
+      {
+        "json": {
+          "學號": "09112",
+          "姓名": "陳永泉",
+          "mail": "dengkai.innovation@gmail.com",
+          "國文": 54,
+          "英文": 66
+        }
+      }
+    ]
+  },
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "寄及格成績",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "寄不及格成績",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’ [1]": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "3d2e347e-f418-4c30-8769-3126779135b0",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8221441b5fb0e121daeab9f4c2fc51c438ddf6ab38212fa85927b6de43fb63a3"
+  },
+  "nodeGroups": [],
+  "id": "SZO056aLvvx3i6SR",
+  "tags": [
+    {
+      "updatedAt": "2026-07-07T00:34:29.007Z",
+      "createdAt": "2026-07-07T00:34:29.007Z",
+      "id": "gT1136dyUFsgyk00",
+      "name": "training"
+    }
+  ]
+}
