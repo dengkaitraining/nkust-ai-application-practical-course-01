@@ -1,1 +1,6 @@
+<p><font color="red" size="3">注意：Jingjai 2 概念 - dynamic</font></p>
 <h1>現在開獎的號碼：{{ num }}</h1>
+<p><font color="red" size="3">注意：靜態路徑 - static</font></p>
+<img src="/static/lotto.png" alt="lotto" width="*" height="300">
+<p><font color="red" size="3">注意：Jingjai 2 概念 - dynamic</font></p>
+<img src="{{ url_for('static', filename='lotto.png') }}" alt="lotto" width="*" height="300">

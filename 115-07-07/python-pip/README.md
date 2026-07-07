@@ -32,9 +32,28 @@ hint: See PEP 668 for the detailed specification.
   ```sh
   sudo python3 --version
   ```
-  - 2. 將 ```/usr/lib/python``` 版本 ```/EXTERNALLY-MANAGED``` 檔案重新命名，這樣就不會觸發 ```error: externally-managed-environment``` 警告了。
- 
 
+  - 2. 將 ```/usr/lib/python``` 版本 ```/EXTERNALLY-MANAGED``` 檔案重新命名，這樣就不會觸發 ```error: externally-managed-environment``` 警告了。
+  ```sh
+  sudo mv /usr/lib/python3.12/EXTERNALLY-MANAGED /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+  ```
+
+  - 3. 另一個作法是加上 ```--break-system-packages``` 引數，強制 ```pip``` 安裝：
+  ```sh
+  sudo pip install <套件名稱> --break-system-packages
+  ```
+
+  - 儘管用 ```pip install <套件名稱> --use``` r指令也可以，不過這是將 Pyhton 套件安裝到使用者目前的家目錄，只有目前使用者執行的Python程式能夠import模組。假若Python程式需要使用sudo執行，則又會遇到ModuleNotFoundError: No module named找不到套件的問題。
+
+#### 2. 改用Linux套件管理器安裝Python套件
+ - pip 不能變更系統，那就透過 Linux 發行版套件管理員代勞吧。仔細看文章一開頭提到的 ```error: externally-managed-environment``` 訊息，它也建議你使用 ```apt install``` 的方式安裝 Python 套件。
+ - 有些受歡迎的Python套件，Linux發行版會將之打包為套件，通常這些套件會以 **python-套件名稱** 開頭。
+ - 譬如Cython，Ubuntu有將其打包，可以透過APT套件庫安裝，不需要透過pip：
+ ```sh
+ sudo apt install cython
+ ```
+ - 安裝後全系統可用，Python指令稿裡面就能直接 ```import cython``` 模組了。
+ - 因為這些套件是Linux發行版管理員維護的，穩定性有保障，能夠確保裝下去不會破壞系統依賴。但Linux發行版收錄的Python套件可能會偏舊，無法任意切換版本。
 
 #### 3. 改用 ```Python``` 虛擬環境安裝 ```pip``` 套件 (建議方式)
  - 使用 [Python 官方文件](https://docs.python.org/3/library/venv.html)提及的虛擬環境 (virtual environment) 功能，也就是安裝 Python 套件前都先用 venv 建立一個虛擬環境，讓 Python 的套件跟 Linux 系統套件隔離，再於裡面使用 pip 安裝想要的套件。如此一來系統就不怕被 pip 弄壞，還可以防止不同專案的 Python 套件互相衝突。

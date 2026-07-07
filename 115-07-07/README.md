@@ -38,7 +38,8 @@ mypro i
  ```
  - 1. app 物件有一個函式 send_static_file()
  - 2. 物件.函式
-### 動熊網頁範例
+### 動態網頁範例
+ - Python App
 ```python
 @app.route("/dynamic")
 def dynamic():
@@ -46,4 +47,15 @@ def dynamic():
     dog = random.randint(0, 50)
     print(dog)
     return render_template("locky.html", num = dog) # 將 dog 變數傳給 locky.html
+```
+<br><br>
+
+ - locky.html
+```html
+<p><font color="red" size="3">注意：Jingjai 2 概念 - dynamic</font></p>
+<h1>現在開獎的號碼：{{ num }}</h1>
+<p><font color="red" size="3">注意：靜態路徑 - static</font></p>
+<img src="/static/lotto.png" alt="lotto" width="*" height="300">
+<p><font color="red" size="3">注意：Jingjai 2 概念 - dynamic</font></p>
+<img src="{{ url_for('static', filename='lotto.png') }}" alt="lotto" width="*" height="300">
 ```
