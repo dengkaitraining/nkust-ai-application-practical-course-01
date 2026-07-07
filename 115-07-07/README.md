@@ -44,11 +44,11 @@ flowchart RL
  - 動態 html 檔會儲存在 templates 下。
  - 當 index.html是靜態網頁時 、在 ```app.py``` 內使用 ```send_file(..)``` 將靜態資源response回 Browser 、 專案目錄結構是這樣
 ```sh
-mypro i
-    app.py
-    index.html
-    static/     # 靜態資源
-    templates/  # 動態資源
+proj002/
+├── app.py
+├── index.html
+├── static/     # 靜態資源
+└── templates/  # 動態資源
 ```
  - 比較正規的作法 : 將 index.html 也儲存在 static 內 ,並將 ```send_file()``` 改用 ```send_static_file()```。
  ```python
