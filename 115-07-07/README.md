@@ -15,6 +15,26 @@ app.run(debug=True)
 def image():
     return send file("test.jpg", mimetype= 'image/jpeg")
 ```
+
+```mermaid
+flowchart RL
+   subgraph bw["<font color='red'></font>"]
+       id1(["<br/><font color='red'>&nbsp;&nbsp;&nbsp;&nbsp;Browser&nbsp;&nbsp;&nbsp;&nbsp;</font><br/><br/>"])
+       id3["<font color='red'>Browser 收到回應後，如果能處理就呈現在畫面(窗格)，例如收到 HTML 文件就直接呈現，如果是 image 也可以呈現。<font color='purple'>但 doc 就只好給檔案總>管處理。</font></font>"]
+   end
+   
+   subgraph py["<font color='red'></font>"]
+       id2(["<br/><font color='red'>Python Flask</font><br/><br/>"])
+       id4["<font color='red'>收到 Requset 後，進行處理，再 Response。開發者要決定處理細節。</font>"]
+   end
+
+   id1 --> |"<font color='purple'>http://127.0.0.1:5000/</font><br/>Request"| id2
+   id2 --> |"Response"| id1
+  
+
+   
+```
+
 ### 動態（dynamnic）與靜（（static） 資源
  - html 檔在Browser發出Request後 其所呈現的內容都不變就是靜態。
  - ttml檔檔在Browser發出Request後・其所呈現的內容會變・就是動態，會有 Jinja2 語法。
