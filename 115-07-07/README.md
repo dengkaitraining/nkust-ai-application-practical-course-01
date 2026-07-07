@@ -5,5 +5,36 @@
 ###
 ## （13:00 ~ 17:00）Python Flask 框架（徐偉智）
 ### 
-### 
-### 
+### 在開發階段 將偵錯（Debug）模式啟動
+```python
+app.run(debug=True)
+```
+### URL 由設定・http:/IP address:portNumber/myimg 就會執行 def image() function
+```python
+@app.route("/my_img")
+def image():
+    return send file("test.jpg", mimetype= 'image/jpeg")
+```
+### 動態（dynamnic）與靜（（static） 資源
+ - html 檔在Browser發出Request後 其所呈現的內容都不變就是靜態。
+ - ttml檔檔在Browser發出Request後・其所呈現的內容會變・就是動態，會有 Jinja2 語法。
+ - jpg` CSS、js....等檔案 、不會因Request而改變內容 、所以是static。
+### Python Flask Web Framework 的慣例
+ - 靜態資源會儲存在 static 資料夾下。
+ - 動態 html 檔會儲存在 templates 下。
+ - 當 index.html是靜態網頁時 、在 ```app.py``` 內使用 ```send_file(..)``` 將靜態資源response回 Browser 、 專案目錄結構是這樣
+```sh
+mypro i
+    app.py
+    index.html
+    static/     # 靜態資源
+    templates/  # 動態資源
+```
+ - 比較正規的作法 : 將 index.html 也儲存在 static 內 ,並將 ```send_file()``` 改用 ```send_static_file()```。
+ ```python
+ @app.rounte("/")
+ def home():
+    return app.send_static_file("index.html") #將 static 下的 index.html 傳送至 Brower
+ ```
+ - 1. app 物件有一個函式 send_static_file()
+ - 2. 物件.函式
