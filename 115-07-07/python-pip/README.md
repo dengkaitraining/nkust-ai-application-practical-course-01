@@ -67,7 +67,7 @@ hint: See PEP 668 for the detailed specification.
  - 2. 使用 **python3 -m venv** 指令，在家目錄建立一個叫做venv的虛擬環境，實際上就是一個新目錄：
  ```sh
  cd ~ # project path
- python3 -m venv venv
+ sudo python3 -m venv venv
  ```
  - 註解：如果你使用的Python專案來自Github，那麼也可以在git clone之後，於git儲存庫的目錄直接建立venv虛擬環境。
  - 3. 然後用source指令，讀取venv目錄下的activate指令，進入虛擬環境，終端機的提示符前方應該會變成(venv)
