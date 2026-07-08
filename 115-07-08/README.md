@@ -125,9 +125,26 @@ curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lates
    ]
  }'
 ```
-
 ### 
 ## （13:00 ~ 17:00）檢索增強生成應用系統開發（徐偉智）
 ### 
+```prompt
+編寫一個Python Flask 範例，展示<form>送出資料到後端處理的過程，規格如<spec>所述。
+<spec>
+ 1. 使用現有的 venv 環境建制
+ 2. <form>只有一個  user_prompt輸入欄位。
+ 3. <form>的資料以POST送到  route /process 處理
+ 4. 處理的動作是將收到的 User_prompt Echo 回 Browser，以動態網頁的方式。也就是有一個動態網頁 output.html，可以接收User_Prompt。output.html不使用CSS。
+ 5. <form>網頁使用靜態網頁的方式，send_static_file()。不使用CSS語法。
+</spec>
+```
+
+```prompt
+請依據本專案所在的資料夾檔案內容，建立一個完整的 markdown 的說明檔案。
+包含：
+1. 以 mermiad 程式繪製系統架構圖、流程圖。
+2. import module 的使用說明與操作說明。
+3. import api key 說明。
+```
 ### 
 ### 
