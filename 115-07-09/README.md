@@ -2,7 +2,7 @@
 ## （08:00 ~ 12:00）工作自動化流程（趙伯元）
 ### API
  - 匯率 API ：[https://latest.currency-api.pages.dev/v1/currencies/twd.json](https://latest.currency-api.pages.dev/v1/currencies/twd.json)
- - 
+ - 證交所 API ：[https://openapi.twse.com.tw/](https://openapi.twse.com.tw/)
 ### 
 ### 
 ## （13:00 ~ 17:00）Python Flask 框架（徐偉智）
