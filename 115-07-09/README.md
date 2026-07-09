@@ -7,6 +7,10 @@
 ### 
 ## （13:00 ~ 17:00）Python Flask 框架（徐偉智）
 ### 
+---
+[課程程式範例](https://github.com/dengkaitraining/rag-training)
+---
+### 
 ### CLI 工具就叫Shell
 ### 系統環境變數對所有應用程式有效,例如PATH
 ### 應用程式環境變數
