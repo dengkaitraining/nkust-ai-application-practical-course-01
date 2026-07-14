@@ -1,0 +1,171 @@
+{
+  "name": "第八個n8n專案-LINE-聊天機器人-回覆成績-cloud",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "send",
+        "to": "U36db3c9e8ef423f1d27f2ad6715fb5ab",
+        "messages": {
+          "values": [
+            {
+              "text": "=學生程式設計成績\n姓名：{{ $json['姓名'] }}\n信箱：{{ $json.Email }}\n成績：{{ $json['程式設計成績'] }}"
+            }
+          ]
+        }
+      },
+      "type": "@aotoki/n8n-nodes-line-messaging.lineMessaging",
+      "typeVersion": 1,
+      "position": [
+        304,
+        -80
+      ],
+      "id": "fe3f8a1f-c88c-4e30-9201-f143fdfa999e",
+      "name": "Line Messaging",
+      "credentials": {
+        "lineMessagingApi": {
+          "id": "fd4TCU2zbCp37AgM",
+          "name": "Line Messaging account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "8b17f75b-acc0-41a9-91e8-d43e8d116458",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -384,
+        0
+      ],
+      "id": "98b159d5-85ab-4314-af62-ba410c682a97",
+      "name": "Webhook 聊天機器人",
+      "webhookId": "8b17f75b-acc0-41a9-91e8-d43e8d116458"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I",
+          "mode": "list",
+          "cachedResultName": "114期末成績",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "工作表1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -144,
+        0
+      ],
+      "id": "f8e20131-f3d2-4a8b-a9ec-0ae6d6229442",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "jqfj7BGItKeMjPes",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "c38d63d1-749d-4550-bdc2-3d555e45eae6",
+              "leftValue": "={{ $json['姓名'] }}",
+              "rightValue": "={{ $('Webhook 聊天機器人').item.json.body.events[0].message.text }}",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        48,
+        0
+      ],
+      "id": "f4abe6ae-8ad9-47b6-b8ea-22e4ecd809bb",
+      "name": "If"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook 聊天機器人": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Line Messaging",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "dcf53297-52ad-4b99-9a7a-dc2d337c5128",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "63d59a284554d5077476f6b4b0a5fac8a9a2601af3e3a6e85e6dc307002abe71"
+  },
+  "nodeGroups": [],
+  "id": "Wr1E96scPor61CFd",
+  "tags": [
+    {
+      "updatedAt": "2026-07-07T00:34:21.315Z",
+      "createdAt": "2026-07-07T00:34:21.315Z",
+      "id": "bTNBMEY472eqjjc8",
+      "name": "training"
+    }
+  ]
+}

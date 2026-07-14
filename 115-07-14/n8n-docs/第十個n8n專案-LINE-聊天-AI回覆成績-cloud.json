@@ -1,0 +1,301 @@
+{
+  "name": "第十個n8n專案-LINE-聊天-AI回覆成績-cloud",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "send",
+        "to": "U36db3c9e8ef423f1d27f2ad6715fb5ab",
+        "messages": {
+          "values": [
+            {
+              "text": "={{ $json.output }}"
+            }
+          ]
+        }
+      },
+      "type": "@aotoki/n8n-nodes-line-messaging.lineMessaging",
+      "typeVersion": 1,
+      "position": [
+        -64,
+        0
+      ],
+      "id": "fe3f8a1f-c88c-4e30-9201-f143fdfa999e",
+      "name": "Line Messaging",
+      "credentials": {
+        "lineMessagingApi": {
+          "id": "fd4TCU2zbCp37AgM",
+          "name": "Line Messaging account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "8b17f75b-acc0-41a9-91e8-d43e8d116458",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -672,
+        0
+      ],
+      "id": "98b159d5-85ab-4314-af62-ba410c682a97",
+      "name": "Webhook 聊天機器人",
+      "webhookId": "8b17f75b-acc0-41a9-91e8-d43e8d116458"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.events[0].message.text }}",
+        "options": {
+          "systemMessage": "您是一位學校教師，可以查詢學生程式設計成績及學生姓名。\n\nTOOLS:\n1. Get-學生成績：取得查詢的學生姓名與程式設計成績。\n2. Update-學生成績：修改學生程式設計成績。"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -464,
+        0
+      ],
+      "id": "31563e31-0513-4663-8b99-1aaf29f69021",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -608,
+        208
+      ],
+      "id": "b48dc780-3e80-426f-a85b-2ad8a10850dd",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "3G9ywEdUVsLT5vIZ",
+          "name": "n8n free OpenAI API credits"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I",
+          "mode": "list",
+          "cachedResultName": "114期末成績",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "工作表1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -208,
+        192
+      ],
+      "id": "2b2581ca-8c8b-4cbe-b758-c3ff2a3f9584",
+      "name": "Get-學生成績",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "jqfj7BGItKeMjPes",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I",
+          "mode": "list",
+          "cachedResultName": "114期末成績",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "工作表1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15lceIvwiUy1cOFLFtheSfDIytHJ0xw6bpqO__4nx38I/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "姓名": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('____using_to_match_', ``, 'string') }}",
+            "程式設計成績": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('______', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "姓名"
+          ],
+          "schema": [
+            {
+              "id": "序號",
+              "displayName": "序號",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "姓名",
+              "displayName": "姓名",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "程式設計成績",
+              "displayName": "程式設計成績",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -352,
+        192
+      ],
+      "id": "706c683f-141a-4dbe-b9c8-30c2b075e5ce",
+      "name": "Update-學生成績",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "jqfj7BGItKeMjPes",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook 聊天機器人": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Line Messaging",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get-學生成績": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update-學生成績": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "a0381931-8409-4913-bfa3-fe9a1d5012b5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "63d59a284554d5077476f6b4b0a5fac8a9a2601af3e3a6e85e6dc307002abe71"
+  },
+  "nodeGroups": [],
+  "id": "Wr1E96scPor61CFd",
+  "tags": [
+    {
+      "updatedAt": "2026-07-07T00:34:21.315Z",
+      "createdAt": "2026-07-07T00:34:21.315Z",
+      "id": "bTNBMEY472eqjjc8",
+      "name": "training"
+    }
+  ]
+}
