@@ -1,6 +1,6 @@
 ## （08:00 ~ 17:00）Python Flask 框架（徐偉智）
 ### 
-### ```Latge Language Model``` 在學習完 ```Knowledge``` 後知識就 ```frozen``` 了。
+### ```Large Language Model``` 在學習完 ```Knowledge``` 後知識就 ```frozen``` 了。
 ### ```LLM``` 不等於 ```ChatGPT```，後者有 ```RAG``` 元素
 ### ```RAG (Retrieval Augmented Generation)```
  - ```Retrieval``` 的來源是特定知識庫 ```(Specific Knowledge)```，```Retrieval``` 的根據是 ```user_prompt```。
