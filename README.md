@@ -129,19 +129,19 @@
   <tr>
     <td style="text-align: right; font-size: 70%; font-style: italic;">w30</td>
     <td style="text-align: right;">19</td>
-    <td style="text-align: right;"><a href="" target="_blank">20<a></td>
-    <td style="text-align: right;"><a href="" target="_blank">21<a></td>
-    <td style="text-align: right;"><a href="" target="_blank">22<a></td>
-    <td style="text-align: right;"><a href="" target="_blank">23<a></td>
+    <td style="text-align: right;"><a href="115-07-20" target="_blank">20<a></td>
+    <td style="text-align: right;"><a href="115-07-21" target="_blank">21<a></td>
+    <td style="text-align: right;"><a href="115-07-22" target="_blank">22<a></td>
+    <td style="text-align: right;"><a href="115-07-23" target="_blank">23<a></td>
     <td style="text-align: right;">24</td>
     <td style="text-align: right;">25</td>
   </tr>
   <tr>
     <td style="text-align: right; font-size: 70%; font-style: italic;">w31</td>
     <td style="text-align: right;">26</td>
-    <td style="text-align: right;"><a href="" target="_blank">27<a></td>
-    <td style="text-align: right;"><a href="" target="_blank">28<a></td>
-    <td style="text-align: right;"><a href="" target="_blank">29<a></td>
+    <td style="text-align: right;"><a href="115-07-27" target="_blank">27<a></td>
+    <td style="text-align: right;"><a href="115-07-28" target="_blank">28<a></td>
+    <td style="text-align: right;"><a href="115-07-29" target="_blank">29<a></td>
     <td style="text-align: right;">30</td>
     <td style="text-align: right;">31</td>
     <td style="text-align: right;"></td>
